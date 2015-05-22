@@ -126,6 +126,32 @@ function loop_notification_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_create_post_in_taxonomy'] = entity_import('rules_config', '{ "rules_create_post_in_taxonomy" : {
+      "LABEL" : "Create post in taxonomy",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag", "loop_notification", "rules" ],
+      "ON" : { "node_insert--post" : { "bundle" : "post" } },
+      "DO" : [
+        { "flag_fetch_users_taxonomy_term" : {
+            "USING" : {
+              "flag" : "subscribe_taxonomy",
+              "taxonomy_term" : [ "node:field-subject" ]
+            },
+            "PROVIDE" : { "users" : { "users" : "Users who flagged" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "users" ] },
+            "ITEM" : { "user" : "Bruger" },
+            "DO" : [
+              { "loop_notification_rules_process" : { "recipient" : [ "user" ], "messageType" : "post_created_in_taxonomy" } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_remove_subscription'] = entity_import('rules_config', '{ "rules_remove_subscription" : {
       "LABEL" : "Remove subscription",
       "PLUGIN" : "rule",
