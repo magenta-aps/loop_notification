@@ -130,7 +130,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create post in taxonomy",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "flag", "loop_notification", "rules" ],
+      "REQUIRES" : [ "flag", "rules" ],
       "ON" : { "node_insert--post" : { "bundle" : "post" } },
       "DO" : [
         { "flag_fetch_users_taxonomy_term" : {
@@ -144,9 +144,7 @@ function loop_notification_default_rules_configuration() {
         { "LOOP" : {
             "USING" : { "list" : [ "users" ] },
             "ITEM" : { "user" : "Bruger" },
-            "DO" : [
-              { "loop_notification_rules_process" : { "recipient" : [ "user" ], "messageType" : "post_created_in_taxonomy" } }
-            ]
+            "DO" : [ { "loop_notification_rules_process" : [] } ]
           }
         }
       ]
