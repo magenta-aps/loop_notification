@@ -145,7 +145,12 @@ function loop_notification_default_rules_configuration() {
             "USING" : { "list" : [ "users" ] },
             "ITEM" : { "user" : "Bruger" },
             "DO" : [
-              { "loop_notification_rules_process" : { "recipient" : [ "user" ], "messageType" : "post_created_in_taxonomy" } }
+              { "loop_notification_rules_process" : {
+                  "recipient" : [ "user" ],
+                  "messageType" : "post_created_in_taxonomy",
+                  "node" : [ "node" ]
+                }
+              }
             ]
           }
         }

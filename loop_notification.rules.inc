@@ -19,18 +19,23 @@ function loop_notification_rules_action_info() {
                 'label' => t('Message type'),
                 'description' => t('Supply the message type (an entry in /admin/structure/messages).'),
             ),
+            'node' => array(
+                'type' => 'node',
+                'label' => t('Message'),
+                'description' => t('Supply the created message object'),
+            ),
         ),
         'base' => 'loop_notification_rules_process',
     );
     return $items;
 }
 
-function loop_notification_rules_process($recipient, $messageType) {
+function loop_notification_rules_process($recipient, $messageType, $node) {
     global $user;
-    if ($recipient != null) {
+    if ($recipient != null && $node != null) {
         $message = message_create($messageType, array('uid' => $recipient->uid));
         $wrapper = entity_metadata_wrapper('message', $message);
-        $wrapper->field_node->set(menu_get_object());
+        $wrapper->field_node->set($node);
         $wrapper->field_sender->set($user);
         $wrapper->save();
     }
