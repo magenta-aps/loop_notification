@@ -86,11 +86,11 @@ function loop_notification_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'api_version' => 3,
     'module' => 'loop_notification',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
@@ -145,9 +145,9 @@ function loop_notification_default_message_type() {
     "message_text" : {
       "da" : [
         {
-          "value" : "Der er oprettet \u003Ca href=\u0022\/node\/[message:field-node:nid]\u0022\u003Een ny post\u003C\/a\u003E under emnet [message:field-subject].",
+          "value" : "Der er oprettet \u003Ca href=\u0022\/node\/[message:field-node:nid]\u0022\u003Een ny post\u003C\/a\u003E under emnet \u003Ca href=\u0022\/taxonomy\/term\/[message:field-node:field-subject:tid]\u0022\u003E[message:field-node:field-subject]\u003C\/a\u003E.",
           "format" : "html",
-          "safe_value" : "Der er oprettet \u003Ca href=\u0022\/node\/[message:field-node:nid]\u0022\u003Een ny post\u003C\/a\u003E under emnet [message:field-subject]."
+          "safe_value" : "Der er oprettet \u003Ca href=\u0022\/node\/[message:field-node:nid]\u0022\u003Een ny post\u003C\/a\u003E under emnet \u003Ca href=\u0022\/taxonomy\/term\/[message:field-node:field-subject:tid]\u0022\u003E[message:field-node:field-subject]\u003C\/a\u003E."
         }
       ],
       "en" : [
