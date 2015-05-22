@@ -60,6 +60,38 @@ function loop_notification_flag_default_flags() {
     ),
     'api_version' => 3,
   );
+  // Exported flag: "Taksonomi".
+  $flags['subscribe_taxonomy'] = array(
+    'entity_type' => 'taxonomy_term',
+    'title' => 'Taxonomy',
+    'global' => 0,
+    'types' => array(
+      0 => 'subject',
+    ),
+    'flag_short' => 'Subscribe',
+    'flag_long' => '',
+    'flag_message' => 'You are now subscribed to this term.',
+    'unflag_short' => 'Unsubscribe',
+    'unflag_long' => '',
+    'unflag_message' => 'You are no longer subscribed to this term.',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 0,
+      'diff_standard' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'api_version' => 3,
+    'module' => 'loop_notification',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
   return $flags;
 
 }
