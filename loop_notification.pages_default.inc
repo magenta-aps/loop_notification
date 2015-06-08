@@ -423,6 +423,25 @@ function loop_notification_default_page_manager_pages() {
     $pane->uuid = '4e3a42bd-0a95-4e34-b24c-5022026f8c81';
     $display->content['new-4e3a42bd-0a95-4e34-b24c-5022026f8c81'] = $pane;
     $display->panels['beta'][1] = 'new-4e3a42bd-0a95-4e34-b24c-5022026f8c81';
+    $pane = new stdClass();
+    $pane->pid = 'new-7d0af84b-a144-4c30-b825-cc18235d551c';
+    $pane->panel = 'beta';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'loop_user_taxonomy_subscriptions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '7d0af84b-a144-4c30-b825-cc18235d551c';
+    $display->content['new-7d0af84b-a144-4c30-b825-cc18235d551c'] = $pane;
+    $display->panels['beta'][2] = 'new-7d0af84b-a144-4c30-b825-cc18235d551c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
