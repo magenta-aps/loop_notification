@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * loop_notification.rules.inc
+ */
 
 /**
  * Implements hook_rules_action_info().
@@ -30,6 +34,9 @@ function loop_notification_rules_action_info() {
   return $items;
 }
 
+/**
+ * Implements hook_rules_process().
+ */
 function loop_notification_rules_process($recipient, $message_type, $node) {
   global $user;
   if ($recipient != NULL && $node != NULL) {
